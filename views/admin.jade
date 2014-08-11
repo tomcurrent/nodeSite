@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  .container
+    .row
+      .admin-container.col-sm-10
+        h1(data-heading) EC LOGIN PAGE
+        .results.red(data-results) 
+        form#admin(data-js="login")
+          p
+            input(type="text", placeholder="User Name *", required="required", name="userName", data-js="user-name")
+            label
+              span.error(data-error="user") *User Name Field Required
+              span.error(data-error="2") *Tahoe Partners email address required
+          p
+            input(type="password", placeholder="Password *", required="required", name="password", data-js='password')
+            label
+              span.error(data-error="password") *Password Field Required
+          p.button
+            a.contact-btn(data-button="login") Login
+              span.icon-arrowrightfill
+        section(data-admin, style="display: none")
+          a.logout(data-logout) logout
+          span.divider |
+          a(data-add) add user
+          span.divider |
+          a(href="/contact") "contact Us" list
+          span.divider |
+          a(href="/subscribe") "Blog Subscribe" list
+          span.divider |
+          a(href="/report") "Report" list
+          .form.add-user(data-js="new", style="display: none")
+            p
+            input(type="text", placeholder="Add User Name *", required="required", name="userName", data-js="user-name")
+            label
+              span.error(data-error="user") *User Name Field Required
+              span.error(data-error="2") *Tahoe Partners email address required
+            p
+            input(type="password", placeholder="New Password *", required="required", name="password", data-js='password')
+            label
+              span.error(data-error="password") *Password Field Required
+            p
+            input(type="password", placeholder="Verify Password *", required="required", name="verify", data-js='verify')
+            label
+              span.error(data-error="verify") *Verify Field Required
+              span.error(data-error="verify2") *Passwords Must Match
+            p.button
+            a.contact-btn(data-button="new") Login
+              span.icon-arrowrightfill
+            a.hide-add(data-hide-add) hide add user
+          .users
+            h4 Current User List
+            ul.user-list
+              each user, i in userData
+                li #{user.username}
+  script(src="js/libs/libs.min.js")
+  script(src="js/adminScripts.js")

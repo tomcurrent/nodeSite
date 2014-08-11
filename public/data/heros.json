@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Reyes Holdings",
+    "feats": [
+      "4 major areas of recommendation",
+      "SharePoint vision and governance",
+      "Platfrorm and feature consolidation"
+    ],
+    "content": "A three-year roadmap aligned the organization around collaboration priorities for over 15,000 global employees, many of them mobile. Intranet redesign and document management were two early high priority areas.",
+    "imageUrl": "images/portfolio/reyes-hero.png",
+    "caseStudy" : [
+      {"innerTitle": "Hollister Healthcare", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Huron Consulting", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Navistar", "image" : "images/portfolio/1.jpg"}
+    ]
+  },
+  {
+    "title": "Hollister Healthcare",
+    "feats": [
+      "15 global departments interviewed",
+      "4,500 users",
+      "50+ interview participants"
+    ],
+    "content": "A multi-year roadmap for this global organization will lead to a common collaboration environment. Early priorities included a redesigned intranet, multi-lingual, personalization, social, content governance and robust search.",
+    "imageUrl": "images/portfolio/reyes-hero.png",
+    "caseStudy" : [
+      {"innerTitle": "Reyes Holdings", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Huron Consulting", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Navistar", "image" : "images/portfolio/1.jpg"}
+    ]
+  },
+  {
+    "title": "Huron Consulting",
+    "feats": [
+      "86% increased usage",
+      "300% increase in content contributors"
+    ],
+    "content": "This $700 M professional services firm sough to increase adoption of its intranet and, as a result, workforce productivity. Nielsen Normal recognized this intranet as one of the ten best of the year.",
+    "imageUrl": "images/portfolio/reyes-hero.png",
+    "caseStudy" : [
+      {"innerTitle": "Reyes Holdings", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Hollister Healthcare", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Navistar", "image" : "images/portfolio/1.jpg"}
+    ]
+  },
+  {
+    "title": "Navistar",
+    "feats": [
+      "1,800 new ideas",
+      "5.3 MM in savings in 1st 6 months"
+    ],
+    "content": "This $13 B global manufacturer sought to foster communication through social business across its 14,000 employees. Finding internal experts quickly and cultivating employee ideas that drive bottom line results were high priority objectives.",
+    "imageUrl": "images/portfolio/reyes-hero.png",
+    "caseStudy" : [
+      {"innerTitle": "Reyes Holdings", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Hollister Healthcare", "image" : "images/portfolio/1.jpg"},
+      {"innerTitle": "Huron Consulting", "image" : "images/portfolio/1.jpg"}
+    ]
+  }
+]

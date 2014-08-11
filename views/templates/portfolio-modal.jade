@@ -1,0 +1,46 @@
+.modal.fade.portfolio-modal(tabindex="-1")
+  .modal-dialog
+    .modal-content(data-append="modal-portfolio")
+      // - HANDLEBARS TEMPLATE START // 
+      script(data-template="portfolio-template", type="text/x-handlebars-template")
+        <div class="modal-header" data-js="header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{title}}</h4>
+        <h5 class="inner-title">Heroic Feats</h5>
+        </div>
+        <div class="modal-body" data-js="body">
+        <div class="row">
+        <div class="col-sm-6">
+        <ul class="list-content">
+        {{#each feats}}
+        <li>{{this}}</li>
+        {{/each}}
+        </ul>
+        </div>
+        <div class="col-sm-6">
+        <p>{{content}}</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="align-center padding">
+        <img src="{{imageUrl}}" alt="modal">
+        </div>
+        </div>
+        <div class="row">
+        <div class="bg-box1 padding clearfix">
+        {{#each caseStudy}}
+        <div class="col-sm-4 case-study" data-trigger="{{innerTitle}}">
+        <div class="bg-box1">
+        <a class="hovers bwWrapper">
+        <img src="{{image}}" alt="team">
+        </a>
+        <div class="clearfix team-inner white-bg padding">
+        <h3 class="team-name">{{innerTitle}}</h3>
+        <p class="team-position">Hero Case Study</p>
+        </div>
+        </div>
+        </div>
+        {{/each}}
+        </div>
+        </div>
+        </div>

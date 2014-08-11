@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  p
+    button.hidden(data-id="launch", data-toggle="modal", data-target="#self_assesment") Launch modal 1
+  // SELF ASSESMENT START //
+  #self_assesment.modal.fade(tabindex="-1")
+    .modal-dialog
+      #self-assesment-wrapper.modal-content
+        .modal-header
+        .modal-body
+          .row
+            .col-sm-8
+              h3 People in our organization use SharePoint because:
+          form#assesment_survey(data-id="survey")
+            input(type="checkbox", data-id="/it-dev#")
+            label.assesment-label
+              span I make them
+            div
+              input(type="checkbox", data-id="/owner#")
+              label.assesment-label IT makes us
+            div
+              input(type="checkbox")
+              label.assesment-label They love it!
+  script(src="js/libs/libs.min.js")
+  script(src="js/index-scripts.js")
+  

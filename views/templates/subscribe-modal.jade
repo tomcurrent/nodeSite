@@ -1,0 +1,43 @@
+// START BLPOG-SUBSCRIPTION MODAL SECTION // 
+section#blog_subscription.modal.fade(tabindex="-1")
+  .modal-dialog
+    .modal-content
+      .modal-header.col-sm-12.blog-header
+        .col-sm-10
+          .inner-header
+            h4 Become TahoeSmart
+            p Sign up to recieve weekly industry updates, insights, and more...
+        .col-sm-2
+          button.close(type="button", data-dismiss="modal") ×
+      .modal-body(data-js="subscribe")
+        .results.red(data-results="subscribe") Your Blog Subscription Request has been Successful! Thank You.
+        form#blog_signup
+          .check-container
+            p.blog Interest 
+              span (Select all that apply)
+            input(type="checkbox", value="SharePoint", data-checkbox)
+            label.assesment-label
+              span SharePoint
+            .secondary-label
+              input(type="checkbox", value="Workforce Productivity")
+              label.assesment-label Workforce Productivity
+            .secondary-label
+              input(type="checkbox", value="Customer Engagement")
+              label.assesment-label Customer Engagement
+            .secondary-label
+              input(type="checkbox", value="Healthcare")
+              label.assesment-label Healthcare
+          p.blog Contact Information
+          input(type="text", placeholder="First Name *", required="required", name="firstName", data-js="first-name")
+          label
+            span.error(data-error="first") *First Name Field Required
+          input(type="text", placeholder="Last Name *", required="required", name="lastName", data-js="last-name")
+          label
+            span.error(data-error="last") *Last Name Field Required
+          input(type="email", placeholder="Email *", required="required", name="email", data-js="email")
+          label
+            span.error(data-error="1") *Email Field Required
+            span.error(data-error="2") *Email Not Valid
+          .button
+            a.contact-btn(href="#", data-button="subscribe") Subscribe
+              span.icon-arrowrightfill

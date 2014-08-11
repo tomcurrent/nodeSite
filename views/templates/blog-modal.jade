@@ -1,0 +1,31 @@
+.modal.fade.generic-blog(tabindex="-1")
+  .modal-dialog
+    .modal-content(data-append="modal-blog")
+      // - HANDLEBARS TEMPLATE START // 
+      script(data-template="blog-template", type="text/x-handlebars-template")
+        <div class="modal-header" data-js="header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <img class="port-modal-image" alt="Portfolio" src="{{imageLocation}}">
+        <h4 class="modal-title">{{title}}</h4>
+        </div>
+        <div class="modal-body" data-js="body">
+        {{{content}}}
+        <hr>
+        </div>
+        <div class="blog-footer" data-js="footer">
+        <div class="col-md-6">
+        <img src="{{creatorImage}}" alt="creator">
+        <div class="title-container">
+        <p>
+        <strong>{{creator}}</strong>
+        <br>
+        {{jobTitle}}
+        <br>
+        {{webAddress}}
+        </p>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <p class="sub">{{blurb}}</p>
+        </div>
+        </div>

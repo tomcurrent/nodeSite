@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container
+    .row
+      .admin-container.col-sm-10
+        section.contact
+          h1(data-heading) EC CONTACT LIST
+          a.logout(onclick="logout()") logout
+          span.divider |
+          a(href="/admin") add user
+          span.divider |
+          a(href="/contact") "contact Us" list
+          span.divider |
+          a(href="/subscribe") "Blog Subscribe" list
+          span.divider |
+          a(href="/report") "Report" list
+        .list
+          ul
+            each sub in subscribeData
+              li
+                .inline Name: #{sub.firstName} &nbsp #{sub.lastName}
+                .inline Email: #{sub.email}
+                .inline Contact Reason: #{sub.inqType}
+                .inline Create Date: #{sub.time}
+        script.
+          function logout() {window.sessionStorage.clear(); window.location = "/admin"}

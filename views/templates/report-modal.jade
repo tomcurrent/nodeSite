@@ -1,0 +1,30 @@
+// START BLOG-SUBSCRIPTION MODAL SECTION // 
+section#blog_report.modal.fade(tabindex="-1")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .col-sm-8
+          h4 POWER UP - Get the Report!
+          .results.red(data-results="report") Your Report Request has been Successful! Thank You.
+        button.close(type="button", data-dismiss="modal") ×
+      .modal-body(data-js="report")
+        .col-sm-8
+            form#report
+              p
+                input(type="text", placeholder="First Name *", required="required", name="firstName", data-js="first-name")
+                label
+                  span.error(data-error="first") *First Name Field Required
+              p
+                input(type="text", placeholder="Last Name *", required="required", name="lastName", data-js="last-name")
+                label
+                  span.error(data-error="last") *Last Name Field Required
+              p
+                input(type="email", placeholder="Email *", required="required", name="email", data-js="email")
+                label
+                  span.error(data-error="1") *Email Field Required
+                  span.error(data-error="2") *Email Not Valid
+              p
+                input(type="text", placeholder="Your Company", name="company", data-js="company")
+              p.button
+                a.contact-btn(data-button="report") Power Up Now!
+                  span.icon-arrowrightfill

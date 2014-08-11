@@ -1,0 +1,321 @@
+extends layout
+
+block content
+  header.clearfix
+    section(class=["header-top", "clearfix"])
+      .container
+        .row
+          .col-xs-5.col-sm-4
+            a(class="logo", href="http://www.tahoepartners.com", target="_blank")
+              img(alt="logo", src="images/logo.png")
+          .col-md-8
+            .menu-btn.menu-main(data-target=".nav-collapse", data-toggle="collapse", data-menu)
+              span.fa.icon-menu2
+            ul.navigation.nav-collapse(data-navigation)
+              // DYNAMIC MAIN LINKS HERE //
+              each ec, i in ecData
+                if (i === 10)
+                  each main in ec.mainLinks
+                    li
+                      a(href="#{ec.el}#{main}") #{main}
+    .clearfix
+    // HOME SECTION //
+    section#home
+      .container.align-center
+        article.row
+          // DYNAMIC COPY HERE //
+          each ec, i in ecData
+            if (i === 11)
+              h1.col-md-12 #{ec.mainCopy}
+              h3 #{ec.secondaryCopy}
+                br
+                | #{ec.tertiaryCopy}
+              hr.home-hr
+        figure
+    // CHALLENGE SECTION //
+    section.clearfix.content(id="challenge", data-layout)
+      .container
+        .flat-tabs.clearfix
+          ul.nav.margin.align-right.nav-tabs
+            // DYNAMIC LINKS HERE //
+            each ec, i in ecData
+              if (i === 12)
+                each name, i in ec.linkName
+                  if (i <= 2)
+                    li(data-links="challenge")
+                      a.inner(data-target="#{ec.el}#{name}_1, #{ec.el}#{name}_2" data-toggle="tab") #{name}
+        .tab-content
+          // DYNAMIC IMAGES HERE //
+          each ec, i in ecData
+            if (i === 13)
+              each elem, i in ec.images
+                if (i <= 2)
+                  .tab-pane(id="#{elem.id_}", data-name="challenge")
+                    figure.chart-container(data-chart="challenge")
+                      img(data-src="#{elem.imageUrl}", alt="Inner Image")
+        .tab-content
+          // DYNAMIC TABS HERE //
+          each ec, i in ecData
+            if (i == 14)
+              each elem, i in ec.data
+                if (i <= 2)
+                  .tab-pane(id="#{elem.id_}", data-tab="challenge")
+                      .row.clearfix.lower-container
+                        .col-md-4
+                          .padding
+                            p.about-link CHALLENGE
+                            h2.about-title #{elem.h2}
+                        .col-md-8.challenge-copy
+                          h4
+                            | #{elem.h4}
+                            br
+                            | #{elem.h4br}
+                          p.challenge(data-nodes="challenge") 
+                            | #{elem.para1}
+                            br
+                            | #{elem.para1br}
+                            br
+                            | #{elem.para1br1}
+                            br
+                            | #{elem.para1br2}
+                          p.challenge(data-nodes="challenge2") #{elem.para2}
+                          p.heavy 
+                            | #{elem.heavy}
+                            br
+                            | #{elem.heavy2}
+      .container.blog-holder
+        .team-container(data-modal='blogs')
+          // DYNAMIC BLOG TILES HERE //
+          each ec, i in ecData
+            if (i < 3)
+              .col-md-4.modal-target(data-toggle="modal", data-target=".generic-blog", data-title="#{ec.title}")
+                img.article-link(src="#{ec.imageLocation}", alt="team")
+                .clearfix.team-inner.padding.article-link
+                  h3.team-name
+                    | #{ec.displayTitle}
+                    br
+                    | #{ec.displayTitleL}
+                  .lower
+                    div
+                      p.team-position By #{ec.creator}
+                      p.date(data-js="date") #{ec.pubDate}
+                    .right-button
+                      span.icon-arrowrightflat
+        .row
+          .col-md-12
+          .spacing40.clearfix
+          button.btn.btn-lg.pull-right(data-toggle="modal", data-target="#blog_subscription") Subscribe to our Blog
+            span.icon-arrowrightfill
+    // FIXED IMAGE //
+    section.bg-dark.bg2
+      .container.align-center
+    // SOLUTION SECTION //
+    section#solution.clearfix.content(data-layout)
+      .container
+        .white-bg.clearfix.flat-tabs
+          ul.nav.margin.align-right.nav-tabs
+            // DYNAMIC LINKS HERE //
+            each ec, i in ecData
+              if (i === 12)
+                each name, i in ec.linkName
+                  if (i > 2)
+                    li(data-links="solution")
+                      a.inner(data-target="#{ec.el}#{name}_1, #{ec.el}#{name}_2" data-toggle="tab") #{name}
+        .tab-content
+          // DYNAMIC IMAGES HERE //
+          each ec, i in ecData
+            if (i === 13)
+              each elem, i in ec.images
+                if (i > 2)
+                  .tab-pane(id="#{elem.id_}", data-name="solution")
+                    figure.chart-container(data-chart="solution")
+                      p.caption.invisible(data-caption) What happens when you build from an Enterprise Collaboration roadmap:
+                      p.image-replacment.invisible(data-replacment) #{elem.copy}
+                      img(src="#{elem.imageUrl}", alt="Inner Image")
+        .tab-content
+          // DYNAMIC TABS HERE //
+          each ec, i in ecData
+            if (i === 14)
+              each elem, i in ec.data
+                if (i > 2)
+                  .tab-pane(id="#{elem.id_}", data-tab="solution")
+                    .clearfix
+                      .row.clearfix.lower-container
+                        .col-md-4
+                          .padding
+                            p.about-link SOLUTION
+                            h2.about-title #{elem.h2}
+                        .col-md-8.challenge-copy
+                          h4 
+                            | #{elem.h4}
+                            br
+                            | #{elem.h4br}
+                          p.challenge(data-nodes="challenge") 
+                            | #{elem.para1}
+                            br
+                            | #{elem.para1br}
+                            br
+                            | #{elem.para1br1}
+                            br
+                            | #{elem.para1br2}
+                          p.challenge(data-nodes="challenge2") #{elem.para2}
+                          .link-container
+                            a(href="#{elem.heavyUrl}", target="_blank")
+                              p.heavy 
+                                | #{elem.heavy}
+                                br
+                                | #{elem.heavy2}
+      .container.blog-holder
+        .team-container(data-modal='blogs')
+          // DYNAMIC BLOG TILES HERE //
+          each ec, i in ecData
+            if (i >= 3 && i < 6)
+              .col-md-4.modal-target(data-toggle="modal", data-target=".generic-blog", data-title="#{ec.title}")
+                img.article-link(src="#{ec.imageLocation}", alt="team")
+                .clearfix.team-inner.padding.article-link
+                  h3.team-name
+                    | #{ec.displayTitle}
+                    br
+                    | #{ec.displayTitleL}
+                  .lower
+                    div
+                      p.team-position By #{ec.creator}
+                      p.date(data-js="date") #{ec.pubDate}
+                    .right-button
+                      span.icon-arrowrightflat
+        .row
+          .col-md-12
+            .spacing40.clearfix
+            button.btn.last.btn-lg.pull-right(data-toggle="modal", data-target="#blog_subscription") Subscribe to our Blog
+              span.icon-arrowrightfill
+    // FIXED IMAGE //
+    section.bg-dark.bg1
+      .container.align-center
+    // PORTFOLIO SECTION //
+    section#portfolio.clearfix.content
+      .container
+        .title-content.clearfix
+          .title-inner
+            h3.port-title Our Clients, Our Heros
+        .row.port-container(data-modal="portfolio")
+          // DYNAMIC PORTFOLIO TILES HERE //
+          each ec, i in ecData
+            if (i >= 6 && i <= 9)
+              .col-md-6.port-item
+                .port-inner.clearfix(data-toggle="modal", data-target=".portfolio-modal", data-title="#{ec.name}")
+                  figure.box-40
+                    img.port-image(alt="Portfolio Image", src="#{ec.imageUrl}", data-js="port-image")
+                  .padding.box-60.inner(data-js='box-60')
+                    h3 #{ec.name}
+                    p #{ec.copy}
+                    span.cat-icon.fa.icon-view
+    // GET-STARTED SECTION //
+    section#get-started.clearfix.content
+      .container
+        .title-content.clearfix
+          .title-inner
+            h3.port-title Get Your Cape
+        .container
+          .row
+            .col-sm-6.cape-container
+              .padding.align-center.pricing-table
+                .cape-title
+                  h3
+                    | SharePoint 2013
+                    br
+                    | Self Assessment
+                p.icon-survey.icon
+                p.cape-copy Can SharePoint 2013 help you deliver heroic benefits to your enterprise?
+                .spacing40
+              .cape-link(data-js="cape-link")
+                a.view-more(href="http://www.tahoepartners.com/pages/assessment.aspx", target="_blank") GO
+                a.arrow(href="http://www.tahoepartners.com/pages/assessment.aspx", target="_blank")
+                  span.icon-arrowrightflat
+            #cape-last.col-sm-6.cape-container
+              .padding.align-center.pricing-table
+                .cape-title
+                  h3 Get Our Report
+                p.icon-emailreport.icon
+                p.cape-copy Prepare to save the day – learn how organizations report using SharePoint.
+                .spacing40
+              .cape-link(data-js="cape-link")
+                a.view-more(data-toggle="modal", data-target="#blog_report") SEE THE RESULTS
+                a.arrow(data-toggle="modal", data-target="#blog_report")
+                  span.icon-arrowrightflat
+        .spacing40.clearfix
+      section#contact.bg-dark.bg3
+        .container.contact-container
+          #message-us
+            #map-canvas
+            .message-container.clearfix
+              .row.clearfix
+                .col-md-4
+                  .padding(data-layout)
+                    p.about-link WE'D LOVE TO HEAR FROM YOU
+                    h2.about-title Leave A Message
+                .col-md-8
+                  .padding
+                    div(data-js="contact")
+                      #form-inner
+                        .results.red(data-results="contact") Your Form Submission has been Successful! Thank You.
+                        div(data-form)
+                          form#contact-form
+                            p.radio
+                              span Inquiry Type:
+                              label.blue
+                                input(data-js="general", type="radio", value="general", name="reason", checked="true")
+                                | General
+                              label
+                                input(data-js="careers", type="radio", value="careers", name="reason")
+                                | Careers
+                            p.name
+                              input(data-js="first-name", type="text", name="firstName", placeholder="First Name *", required="required")
+                              label
+                                span.error(data-error="first") *First Name Field Required
+                            p.name
+                              input(data-js="last-name", type="text", name="lastName", placeholder="Last Name *", required="required")
+                              label
+                                span.error(data-error="last") *Last Name Field Required
+                            p
+                              input(data-js="email", type="email", name="email", placeholder="Email *", required="required")
+                              label
+                                span.error(data-error="1") *Email Field Required
+                                span.error(data-error="2") *Email Not Valid
+                            p
+                              input(data-js="phone", type="text", name="phone", placeholder="Your Phone ...")
+                            p.textarea
+                              textarea(data-js="message", name="message", placeholder="Your Message ...", rows="4")
+                            input(type="hidden", name="type", value="contact")
+                            a.contact-btn(href="#", data-button="contact") Send Message
+                              span.icon-arrowrightfill
+                  .spacing40.clearfix
+    // FOOTER SECTION //
+    section.footer.clearfix
+      .container
+        .row
+          .col-sm-6
+            p &copy; 2014 
+              a(href="#") Tahoe Partners
+          .col-sm-6
+            ul.soc-footer
+              li
+                a(href="#")
+                  span.a.icon-facebook
+              li
+                a(href="#")
+                  span.fa.icon-twitter
+              li
+                a(href="#")
+                  span.fa.icon-gplus
+              li
+                a(href="#")
+                  span.fa.icon-pinterest
+    include templates/subscribe-modal
+    include templates/portfolio-modal
+    include templates/blog-modal
+    include templates/report-modal
+  script(src="js/libs/libs.min.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn3oEVD1DN9DqcmqQUba7aSv73mSDR_Do")
+  script(src="js/modals.js")
+  script(src="js/script.js")
+  script(src="js/map.js")
